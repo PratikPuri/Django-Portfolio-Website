@@ -1,0 +1,275 @@
+body {
+  background-color: #e5e5e5;
+}
+
+.section--1 {
+  background-color: #fff;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.section--2 {
+  background-color: #e5e5e5;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.navigation-bar {
+  background-color: #354955;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.aboutme-link {
+  /* color: #0000FF; */
+  color: #F2AA4CFF;
+  text-decoration: none;
+}
+
+.hero {
+  background-color: #1f2428;
+  color: #fff;
+  padding: 0.5em;
+}
+
+#profile_pic {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.hero--content--intro {
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro--name {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.aboutme{
+  letter-spacing: 0em;
+  font-weight: 80;
+  margin-right: 5%;
+  font-size: 20px;
+}
+
+.description {
+  font-size: 65px;
+  text-align: center;
+}
+
+.slogan {
+  font-size: 24px;
+  text-align: center;
+}
+
+.projects--wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  overflow-x: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 1%;
+}
+
+.projects--wrapper::-webkit-scrollbar {
+  width: 2px;
+}
+
+.projects--wrapper::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.projects--wrapper::-webkit-scrollbar-thumb {
+  background-color: #197c8b;
+  outline: 1px solid slategrey;
+  border-radius: 100px;
+}
+
+.projects--wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #197c8b;
+}
+
+.project--column {
+  min-width: 300px;
+}
+
+.project--thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.project--thumbnail1 {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  align-items: center;
+}
+
+.project--body {
+  background-color: #fff;
+  min-height: 20px;
+  padding: 0.5em;
+}
+
+.project--body1 {
+  background-color: #e5e5e5;
+  min-height: 20px;
+  padding: 0.5em;
+}
+
+.project_title{
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.skills--container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.skill--wrapper {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  gap: 2em;
+  align-items: center;
+}
+
+.skill--logo {
+  width: 60px;
+  object-fit: contain;
+}
+
+.other--skills--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.skill--tag {
+  background-color: #c4e7f2;
+  width: fit-content;
+  padding: 3px 20px;
+  border-radius: 20px;
+}
+
+.project--image {
+  max-width: 800px;
+}
+
+@media (max-width: 900px) {
+  .hero--content--intro {
+    flex-direction: column;
+  }
+
+  .projects--wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero--content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills--container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .skill--wrapper {
+    flex-flow: column;
+  }
+}
+
+table,th,td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 1em
+}
+
+.contact--form {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input[type=text], textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(129, 127, 127);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-label {
+  text-transform: capitalize;
+}
+
+.project-container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.btn {
+  background-color: #008CBA;
+  border-radius: 2px;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.alert {
+  padding: 20px;
+  font-size: 20px;
+  background-color: #32de84;
+  color: white;
+  text-align: center;
+}
+
+.quote {
+  text-align: center;
+  /* font-size: 20px; */
+}
+.quote figcaption,
+.quote blockquote {
+  margin: 1em;
+}
+
+.connect
+{
+  font-size: 20px;
+  text-decoration: underline;
+  text-align: center;
+}
