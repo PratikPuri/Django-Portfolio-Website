@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-rafo6y9cw*vdm$4wkia=7(zub8&t1qqs7&2dcq$pc&c=lww-(x
 DEBUG = True
 
 ALLOWED_HOSTS = ['obscure-cove-59583.herokuapp.com']
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -117,7 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 
 STATICFILES_DIRS = [
