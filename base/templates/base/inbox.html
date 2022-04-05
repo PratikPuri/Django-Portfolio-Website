@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'styles/Main.css'%}">
+    </head>
+    <body>
+        <div class="container">
+        <h3> My messages </h3>
+
+            <table>
+                <tr>
+                    <th>Sender</th>
+                    <th>Email</th>
+                    <th>Date sent</th>
+                    <th>Subject</th>
+                    <th>Body</th>
+                </tr>
+                <tr>
+                    {%for message in messages%}
+                        <tr>
+                            <td>{{message.name}}</td>
+                            <td>{{message.email}}</td>
+                            <td>{{message.created}}</td>
+                            <td>{{message.subject}}</td>
+                            <td>{{message.body}}</td>
+                        </tr>
+                    {%endfor%}
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

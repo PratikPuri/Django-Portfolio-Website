@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'styles/Main.css'%}">
+    </head>
+    <body>
+        <section class="navigation-bar">
+            <a class="nav-link" href="/"> Home </a>
+        </section>
+
+        <div class="container">
+            <div class="project-container">
+                <center><img class="project--image" src="{{project.thumbnail.url}}"></center>
+                <h1>{{project.title}}</h1>
+                <hr>
+                <p>{{project.body|safe}}</p>
+            </div>
+        </div>
+    </body>
+</html>

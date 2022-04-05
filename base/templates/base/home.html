@@ -1,0 +1,117 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'styles/Main.css'%}">
+    </head>
+    <body>
+        <section class="navigation-bar">
+            <a class="nav-link" href="#contactMeForm">
+                Contact Me
+            </a>&nbsp&nbsp&nbsp&nbsp
+            <a class="nav-link" href="https://drive.google.com/file/d/10wPdVc9mwXUyFBLw4dUaQhlSHjs4hTVM/view" target="_blank">
+                Resume
+            </a>&nbsp&nbsp&nbsp&nbsp
+        </section>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert" id="msg" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %} 
+        <section class="hero">
+            <div class="hero--content">
+                <div class="hero--content--intro">
+                    <img id="profile_pic" src="{% static 'images/pp.jpg'%}">
+                    <h1 class="intro--name">Pratik Puri Goswami
+                    <p class = "aboutme">
+                        Hi! I am 
+                        <a class="aboutme-link" href = "https://www.linkedin.com/in/pratik-puri-goswami-93a762170/" target="_blank">Pratik Puri Goswami</a>, 
+                        a B.Tech. 2020 graduate from the department of Electrical Engineering at 
+                        <a class="aboutme-link" href = "https://iitgn.ac.in/" target="_blank">Indian Institute of Technology Gandhinagar</a>. 
+                        Since graduation I have been working as a Project Engineer at 
+                        <a class="aboutme-link" href = "https://www.wipro.com/" target="_blank"> Wipro Limited</a>, 
+                        developing automation solutions for several IT processes of the client L'Oreal USA. During my spare time I like to 
+                        participate in coding challenges that has helped me gain three stars on platforms like 
+                        <a class="aboutme-link" href = "https://leetcode.com/PratikPuri/" target="_blank">leetcode</a> and 
+                        <a class="aboutme-link" href = "https://www.codechef.com/users/pat_nil" target="_blank">codechef</a>. 
+                        As a perpetual learner, I am currently working to upskill myself by developing personal projects on the Django framework and the 
+                        MERN stack.
+                    </p></h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="container section--2">
+            <u><h1 class ="project_title">My Projects</h1></u>
+            <div class="projects--wrapper">
+                {% for project in projects %}
+                    <div class="project--column">
+                        <a href = "{% url 'project' project.id %}" >
+                        <!-- maybe it means that 1) pick the base url 2) add project keyword to it 3) add the project id to the same -->
+                        <img class="project--thumbnail" src="{{project.thumbnail.url}}"></a>
+                        <div class="project--body">
+                            {{project.title}}
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+        </section>
+
+        
+        <section class="section--1">
+            <u><h1 class ="project_title">My Education</h1></u>
+            <div class="projects--wrapper">
+                {% for school in schools %}
+                    <div class="project--column">
+                        <img class="project--thumbnail1" src="{{school.logo}}"><br><br>
+                        <div class="project--body1">
+                            {{school.instituteName}}<br>
+                            Degree: {{school.degree}}<br>
+                            Stream: {{school.stream}}<br>
+                            CGPA/Percentage: {{school.score}} on a scale of {{school.total}}
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+        </section>
+        
+        <!-- <section class="section--1">
+            <div class="skills--container">
+                {% for skill in skills%}
+                <div class="skill--wrapper">
+                    <h1>{{skill.title}}</h1>
+                    <p>{{skill.body}}</p>
+                </div>
+                {%endfor%}
+            </div>
+        </section> -->
+
+        
+
+
+        <section class="section--2" id ="contactMeForm">
+            <h1 align="center">"Tech is all about building human connections."</h1>
+            <center>&mdash; Padmasree Warrior </center><br>
+            <div class="connect">Let's connect</div>
+            <div class="container">
+                <form class="contact--form" method="POST">
+                    {% csrf_token %}
+                    {%for field in form%}
+                        <div class = "mb-3">
+                            <label class="form-label">{{field.name}}</label>
+                            <div class="textClass">{{field}}</div>
+                        </div>
+                    {%endfor%}
+                    <center><input class="btn" type="submit" value="Submit"></center>
+                </form>
+            </div>
+        </section>
+        <script>
+            setTimeout(function(){
+                var div = document.getElementById('msg');
+                div.remove();
+            }, 4000)
+        </script>
+    </body>
+</html>
