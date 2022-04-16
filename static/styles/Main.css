@@ -163,12 +163,15 @@ body {
 
 .other--skills--wrapper {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
+  justify-content: center;
 }
 
 .skill--tag {
-  background-color: #c4e7f2;
+  background-color:#007FFF;
+  color: white;
   width: fit-content;
   padding: 3px 20px;
   border-radius: 20px;
@@ -271,5 +274,39 @@ input[type=text], textarea{
 {
   font-size: 20px;
   text-decoration: underline;
+  text-align: center;
+}
+
+.icon
+{
+  padding-left: 10px;
+  width: 28px; 
+  height: 28px; 
+}
+
+.rating .fa-solid {
+  font-size: 40px;
+  color: #7393B3;
+  cursor: pointer;
+}
+
+.rating{  
+  background: white;
+}
+
+.rating2{
+  padding: 5em;
+  /* margin: 25%; */
+  /* height: 75%;
+  width: 75%; */
+}
+
+.rating-container{
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }

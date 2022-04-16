@@ -1,0 +1,76 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'styles/Main.css'%}">
+        <script src="https://kit.fontawesome.com/00c592c80b.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <section class="navigation-bar">
+            <a class="nav-link" href="/"> Home </a>
+        </section>
+        <div class = "rating-container">
+
+            <div class ="rating">
+                <div class = "rating2">
+                    <form class="contact--form" method="POST">
+                        {% csrf_token %}
+                        <h3>Please rate my website on a scale of 1 to 5 stars</h3>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><br><br>
+                        <input type = "hidden" name = "rating" value = 0 id = "count"/><br>
+                        Your feedback is highly appreciated!
+                        <input type = "text" name="body"><br><br>
+                        <input class="btn" type="submit" value="Submit">
+                    </form>
+                </div>  
+            </div>
+        </div>
+        <script>
+            var stars = document.getElementsByClassName("fa-solid");
+            var count = document.getElementById("count");
+            stars[0].onclick = function (){
+                count.value=1;
+                stars[0].style.color = "#ffd93b";
+                stars[1].style.color = "#7393B3";
+                stars[2].style.color = "#7393B3";
+                stars[3].style.color = "#7393B3";
+                stars[4].style.color = "#7393B3";
+            }
+            stars[1].onclick = function (){
+                count.value=2;
+                stars[0].style.color = "#ffd93b";
+                stars[1].style.color = "#ffd93b";
+                stars[2].style.color = "#7393B3";
+                stars[3].style.color = "#7393B3";
+                stars[4].style.color = "#7393B3";
+            }
+            stars[2].onclick = function (){
+                count.value=3;
+                stars[0].style.color = "#ffd93b";
+                stars[1].style.color = "#ffd93b";
+                stars[2].style.color = "#ffd93b";
+                stars[3].style.color = "#7393B3";
+                stars[4].style.color = "#7393B3";
+            }
+            stars[3].onclick = function (){
+                count.value=4;
+                stars[0].style.color = "#ffd93b";
+                stars[1].style.color = "#ffd93b";
+                stars[2].style.color = "#ffd93b";
+                stars[3].style.color = "#ffd93b";
+                stars[4].style.color = "#7393B3";
+            }
+            stars[4].onclick = function (){
+                count.value=5;
+                stars[0].style.color = "#ffd93b";
+                stars[1].style.color = "#ffd93b";
+                stars[2].style.color = "#ffd93b";
+                stars[3].style.color = "#ffd93b";
+                stars[4].style.color = "#ffd93b";
+            }
+        </script>
+    </body>
+</html>

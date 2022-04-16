@@ -10,8 +10,19 @@
 
         <div class="container">
             <div class="project-container">
-                <center><img class="project--image" src="{{project.thumbnail.url}}"></center>
+                <center><img class="project--image" src="{{project.thumbnail.url}}">
                 <h1>{{project.title}}</h1>
+                <a href={{project.github}} target="_blank"><img class = "icon" src="{% static 'images/GitHub-Mark-32px.png'%}"></a>
+                <a href={{project.deployLink}} target="_blank"><img class = "icon" src="{% static 'images/link.png'%}"></a></center>
+                <br>
+                <div class="other--skills--wrapper">
+                    {% for tag in project.getTags %}
+                    <div class="skill--tag">
+                        <span>{{tag}}</span>
+                    </div>
+                    {%empty%}
+                    {%endfor%}
+                </div>
                 <hr>
                 <p>{{project.body|safe}}</p>
             </div>

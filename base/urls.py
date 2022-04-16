@@ -6,4 +6,5 @@ urlpatterns = [
     path('',views.homepage, name="home"),
     path('inbox/',views.inboxPage, name="inbox"),
     path('project/<str:pk>/',views.projectPage, name="project"),
+    path('feedback',views.feedbackPage, name="feedback"),
 ]

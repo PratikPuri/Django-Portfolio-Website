@@ -40,10 +40,15 @@ class Project(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4,  unique=True,
                           primary_key=True, editable=False)
-
+    github = models.TextField(blank=True,default="#")
+    deployLink = models.TextField(blank=True,default="#")
+    tags = models.TextField(blank=True,null=True)
+    def getTags(self):
+        if self.tags: 
+            return self.tags.split(",");
+        else: return ([]);
     def __str__(self):
         return self.title
-
 
 # class Comment(models.Model):
 #     project = models.ForeignKey(Project, on_delete=models.CASCADE)
@@ -66,13 +71,19 @@ class Skill(models.Model):
     def __str__(self):
         return self.title
 
+class Feedback(models.Model):
+    # rating = models.IntegerField()
+    rating = models.TextField(null=True, blank=True)
+    body = models.TextField(null=True, blank=True)
+    id = models.UUIDField(default=uuid.uuid4,  unique=True,
+                          primary_key=True, editable=False)
+    def __str__(self):
+        return self.rating
 
 class Tag(models.Model):
     name = models.CharField(max_length=200, null=True)
-    created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4,  unique=True,
                           primary_key=True, editable=False)
-
     def __str__(self):
         return self.name
 

@@ -1,8 +1,11 @@
 from django.shortcuts import redirect, render
 from .models import Education, Project, Skill, Message
-from .forms import MessageForm
-
+from .forms import MessageForm,feedbackForm
 from django.contrib import messages
+import sys, json
+sys.path.append("..")
+from api.serializers import FeedbackSerializer
+import requests;
 
 # Create your views here.
 
@@ -25,3 +28,20 @@ def inboxPage(request):
 def projectPage(request,pk):
     project = Project.objects.get(id=pk);
     return render(request,'base/project.html',{'project':project});
+
+def feedbackPage(request):
+    form = feedbackForm()
+    if request.method == 'POST':
+        # print (request);
+        # print (request.POST);
+        # print (request.POST.get('rating'));
+        # print (request.POST.get('body'));
+        # request.data = {'rating':request.POST.get('rating'),'body':request.POST.get('body')};
+        # print (request.body.decode('utf-8'));
+        # print (json.loads(request.body))
+        data1 = {'rating':request.POST.get('rating'),'body':request.POST.get('body')};
+        requests.post('http://127.0.0.1:8000/addFeedbackData', json=data1)
+        messages.success(request,'Thank you for your feedback!');
+        return redirect('/');
+    else:
+        return render(request,'base/feedback.html',{'form':form});
