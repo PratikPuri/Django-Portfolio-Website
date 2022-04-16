@@ -40,7 +40,7 @@ def feedbackPage(request):
         # print (request.body.decode('utf-8'));
         # print (json.loads(request.body))
         data1 = {'rating':request.POST.get('rating'),'body':request.POST.get('body')};
-        requests.post('http://127.0.0.1:8000/addFeedbackData', json=data1)
+        requests.post(request.build_absolute_uri('/addFeedbackData'), json=data1)
         messages.success(request,'Thank you for your feedback!');
         return redirect('/');
     else:

@@ -12,7 +12,6 @@ def getData(request):
 @api_view(['POST'])
 def addFeedback(request):
     serializer = FeedbackSerializer(data=request.data);
-    print (serializer);
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data);
