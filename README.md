@@ -7,10 +7,12 @@ Here are the screenshots of different pages within the website:
 ![Education](https://github.com/PratikPuri/Django-Portfolio-Website/blob/master/static/images/Screenshot3.jpg)
 ![Contact Me](https://github.com/PratikPuri/Django-Portfolio-Website/blob/master/static/images/Screenshot4.jpg)
 
-Steps to run the website on local system:
+Open terminal in administrator mode and execute the following commands to run the website on your local system:
 
-1. git pull <>
-2. pip install -r .\requirements.txt
-3. python manage.py runserver
-
-https://pillow.readthedocs.io/en/stable/installation.html
+1. mkdir DjangoPortfolioWebsite
+2. cd DjangoPortfolioWebsite
+3. git init
+4. git pull https://github.com/PratikPuri/Django-Portfolio-Website.git
+5. Find the python version of your system using the following command: python --version. Use the python version to find the compatible pillow version using the following website: https://pillow.readthedocs.io/en/stable/installation.html and update it within requirements.txt.
+6. pip install -r .\requirements.txt
+7. python manage.py runserver
