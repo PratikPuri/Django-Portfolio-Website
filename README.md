@@ -14,6 +14,6 @@ Open terminal in administrator mode and execute the following commands to run th
 2. cd DjangoPortfolioWebsite
 3. git init
 4. git pull https://github.com/PratikPuri/Django-Portfolio-Website.git
-5. Find the python version of your system using the following command: python --version. Use the python version to find the compatible pillow version using the following website: https://pillow.readthedocs.io/en/stable/installation.html and update it within requirements.txt.
+5. Find the python version of your system using the following command: python --version. Use the python version to find the compatible pillow version using the following website: https://pillow.readthedocs.io/en/stable/installation.html#python-support and update it within requirements.txt.
 6. pip install -r .\requirements.txt
 7. python manage.py runserver
