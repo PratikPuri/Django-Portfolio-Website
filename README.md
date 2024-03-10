@@ -1,4 +1,4 @@
-Django portfolio website
+Django Portfolio Website
 ---
 This repository holds the code for my portfolio website that I created using Django framework. Here are the screenshots of different pages within the website:
 
