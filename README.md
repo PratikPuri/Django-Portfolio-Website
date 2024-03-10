@@ -1,6 +1,6 @@
-This repository holds my portfolio website that I created using Django framework.
+Django portfolio website
 ---
-Here are the screenshots of different pages within the website:
+This repository holds the code for my portfolio website that I created using Django framework. Here are the screenshots of different pages within the website:
 
 ![Introduction](https://github.com/PratikPuri/Django-Portfolio-Website/blob/master/static/images/Screenshot1.jpg)
 ![Projects](https://github.com/PratikPuri/Django-Portfolio-Website/blob/master/static/images/Screenshot2.jpg)
@@ -8,7 +8,9 @@ Here are the screenshots of different pages within the website:
 ![Contact Me](https://github.com/PratikPuri/Django-Portfolio-Website/blob/master/static/images/Screenshot4.jpg)
 
 ---
-Open terminal in administrator mode and execute the following commands to run the website on your local system:
+Steps to run website on local system
+---
+Open terminal in administrator mode and execute the following commands to run the website locally:
 
 1. mkdir DjangoPortfolioWebsite
 2. cd DjangoPortfolioWebsite
